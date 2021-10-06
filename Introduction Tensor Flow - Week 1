@@ -1,0 +1,25 @@
+!pip install tensorflow==2.5.0
+model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])]) #Dimana dia mempunyai satu layer, satu neuron, dan satu bentuk
+model.compile(optimizer='sgd',loss='mean_squared_error') # Fungsi loss memiliki fungsi untuk mengukur seberapa benar tebakan terhadap jawaban benar
+#dan fungsi optimizer untuk membuat tebakan baru menggunakan "Stochastic Gradient Descent" #Compile memiliki arti untuk menyusun
+xs = np.array([-1.0, 0.0, 1.0, 2.0, 3.0, 4.0], dtype=float)
+ys = np.array([-3.0, -1.0, 1.0, 3.0, 5.0,  7.0], dtype=float)
+model.fit(xs, ys, epochs=500) #model fit yaitu perintah untuk membuat sistem belajar hubungan antara xs dan ys
+print(model.predict([10.0]))  #memberikan perintah prediksi
+
+#Latihan 1
+model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])]) #Dimana dia mempunyai satu layer, satu neuron, dan satu bentuk
+model.compile(optimizer='sgd',loss='mean_squared_error') # Fungsi loss memiliki fungsi untuk mengukur seberapa benar tebakan terhadap jawaban benar
+#dan fungsi optimizer untuk membuat tebakan baru menggunakan "Stochastic Gradient Descent" #Compile memiliki arti untuk menyusun
+xs = np.array([1.0, 2.0, 3.0, 4.0, 5.0], dtype=float)
+ys = np.array([5.0, 7.0, 9.0, 11.0, 13.0], dtype=float)
+model.fit(xs, ys, epochs=5000) #model fit yaitu perintah untuk membuat sistem belajar hubungan antara xs dan ys
+print(model.predict([100.0]))  #memberikan perintah prediksi
+
+#Latihan2
+model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])]) 
+model.compile(optimizer='sgd',loss='mean_squared_error')
+xs = np.array([1.0, 2.0, 3.0, 4.0, 5.0], dtype=float)
+ys = np.array([100.0, 150.0, 200.0, 250.0, 300.0], dtype=float)
+model.fit(xs, ys, epochs=500) 
+print(model.predict([7.0]))
